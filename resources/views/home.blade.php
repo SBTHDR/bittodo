@@ -17,6 +17,17 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <p>Upload your profile picture</p>
+                    <hr>
+                    <form action="{{ route('/upload') }}" method="post">
+                        @csrf
+                        <input class="btn btn-light" type="file" name="image">
+                        <input class="float-right btn btn-primary" type="submit" value="Upload" name="upload">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
