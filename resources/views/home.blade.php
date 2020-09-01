@@ -20,7 +20,8 @@
             <div class="card mt-3">
                 <div class="card-body">
                     <p>Upload your profile picture</p>
-                    @include('layouts.flash')
+                    {{-- @include('layouts.flash') --}}
+                    <x-alert/>
                     <hr>
                     <form action="/upload" method="post" enctype="multipart/form-data">
                         @csrf
