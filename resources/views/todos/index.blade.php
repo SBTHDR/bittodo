@@ -5,7 +5,10 @@
 @endsection
 
 @section('content')
-    <h1 class="text-2xl text-indigo-500 p-3">All Todos</h1>
+    <div class="flex justify-center p-3"> 
+        <h1 class="text-2xl text-indigo-500">All Todos</h1>
+        <a href="/todos/create" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
+    </div>
     <hr>
     <ul class="py-5">
         @foreach ($todos as $todo)
