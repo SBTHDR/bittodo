@@ -12,7 +12,10 @@
     <hr>
     <ul class="py-5">
         @foreach ($todos as $todo)
-            <li>{{$todo->title}}</li>
+            <li class="flex justify-center p-2">
+                {{$todo->title}}
+                <a href="/todos/{{$todo->id}}/edit" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Edit</a>
+            </li>
         @endforeach
     </ul>
 @endsection
