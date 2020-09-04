@@ -10,13 +10,28 @@
         <a href="/todos/create" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
         <a href="/" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Home</a>
     </div>
+
     <x-alert/>
-    {{-- <hr> --}}
+
     <ul class="py-5">
         @foreach ($todos as $todo)
             <li class="flex justify-between p-2">
-                {{$todo->title}}
-                <a href="/todos/{{$todo->id}}/edit" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Edit</a>
+                @if ($todo->completed)
+                    <p class="line-through text-gray-600">{{$todo->title}}</p>
+                @else
+                    <p>{{$todo->title}}</p>
+                @endif
+                
+                <div>
+                    <a href="/todos/{{$todo->id}}/edit" class="cursor-pointer text-indigo-500 text-white">
+                    <span class="fas fa-edit px-2"></span>
+                    </a>
+                    @if ($todo->completed)
+                        <span class="fas fa-check text-teal-500 px-2"></span>
+                    @else
+                        <span class="fas fa-check text-gray-300 cursor-pointer px-2"></span>
+                    @endif
+                </div>
             </li>
         @endforeach
     </ul>
