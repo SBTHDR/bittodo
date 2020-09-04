@@ -9,6 +9,7 @@
         <h1 class="text-2xl text-indigo-500">All Todos</h1>
         <a href="/todos/create" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
     </div>
+    <x-alert/>
     <hr>
     <ul class="py-5">
         @foreach ($todos as $todo)

@@ -5,18 +5,16 @@
 @endsection
 
 @section('content')
-    {{-- <div class="flex justify-center p-3"> 
-        <h1 class="text-2xl text-indigo-500">All Todos</h1>
-        <a href="/todos/create" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
+    <div class="flex justify-center p-3"> 
+        <h1 class="text-2xl text-indigo-500">Update Your Todo</h1>
+        <a href="/todos" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">All Todos</a>
     </div>
     <hr>
-    <ul class="py-5">
-        @foreach ($todos as $todo)
-            <li class="flex justify-center p-2">
-                {{$todo->title}}
-                <a href="/todos/{{$todo->id}}/edit" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Edit</a>
-            </li>
-        @endforeach
-    </ul> --}}
-    
+    <x-alert/>
+    <form action="{{route('todo.update', $todo->id)}}" method="post" class="py-5">
+        @csrf
+        @method('put')
+        <input type="text" name="title" value="{{ $todo->title }}" class="py-2 px-2 border">
+        <input type="submit" value="Update" class="p-2 border rounded bg-indigo-500 text-white">
+    </form>
 @endsection
