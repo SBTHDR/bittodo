@@ -1,9 +1,9 @@
 
-# Laravel 7 Crud To-Do
+# Bit-todo a laravel 7 CRUD To-Do SPA
 
 ## About Repository
 
-A very simple Laravel 7 based Curd Todo SPA Application.
+Bit-todo is a very simple CRUD Todo SPA Application based on Laravel 7.
 
 ## Tech Specification
 
@@ -15,7 +15,7 @@ A very simple Laravel 7 based Curd Todo SPA Application.
 
 - Basic To Do list
 - Login, Register, as default auth
-- Creat, Read, Update, Delete Todos 
+- Creat, Read, Update, Delete Todos
 
 ## Installation
 
