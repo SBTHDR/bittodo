@@ -12,8 +12,10 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class="max-w-lg mx-auto rounded overflow-hidden shadow-lg p-2 my-20 text-center">
-        @yield('content')
+    <div class="text-center flex justify-center py-10">
+        <div class="w-2/3 border rounded border-indigo-500 py-5">
+            @yield('content')
+        </div>
     </div>
 </body>
 </html>

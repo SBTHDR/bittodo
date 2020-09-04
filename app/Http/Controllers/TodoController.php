@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\TodoCreateRequest;
 use App\Todo;
 
 class TodoController extends Controller
@@ -18,12 +18,8 @@ class TodoController extends Controller
         return view('todos.create');
     }
 
-    public function store(Request $request)
+    public function store(TodoCreateRequest $request)
     {
-        $request->validate([
-            'title' => 'required|max:255'
-        ]);
-        
         Todo::create($request->all());
         return redirect()->back()->with('message', 'Todo Created successfully');
     }
@@ -33,12 +29,8 @@ class TodoController extends Controller
         return view('todos.edit', compact('todo'));
     }
 
-    public function update(Request $request, Todo $todo)
+    public function update(TodoCreateRequest $request, Todo $todo)
     {
-        $request->validate([
-            'title' => 'required|max:255'
-        ]);
-        
         $todo->update(['title' => $request->title]);
         return redirect(route('todo.index'))->with('message', 'Todo Updated');
     }
