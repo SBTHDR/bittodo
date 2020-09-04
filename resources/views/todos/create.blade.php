@@ -11,10 +11,10 @@
     </div>
 
     <x-alert/>
-    
+
     <form action="/todos/create" method="post" class="py-5">
         @csrf
-        <input type="text" name="title" class="py-2 px-2 border">
+        <input type="text" name="title" class="py-2 px-2 border w-2/3">
         <input type="submit" value="Create" class="p-2 border rounded bg-indigo-500 text-white">
     </form>
 @endsection

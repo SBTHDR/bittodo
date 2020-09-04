@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
         <!-- Styles -->
         <style>
@@ -45,13 +46,14 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 88px;
+                color: #667EEA;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #667EEA;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -82,6 +84,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Bit-todo
+                    <span class="fas fa-edit"></span>
                 </div>
 
                 <div class="links">
