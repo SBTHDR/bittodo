@@ -5,6 +5,8 @@
 
 Bit-todo is a very simple CRUD Todo SPA Application based on Laravel 7.
 
+<img src="https://i.imgur.com/2GIsreG.png">
+
 ## Tech Specification
 
 - Laravel 7
