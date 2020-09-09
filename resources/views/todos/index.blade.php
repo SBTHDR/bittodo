@@ -8,7 +8,7 @@
     <div class="flex justify-between items-center p-3 pb-4 border-b border-indigo-500"> 
         <h1 class="text-2xl text-indigo-500">All Todos</h1>
         <div>
-            <a href="/todos/create" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
+            <a href="{{ route('todo.create') }}" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Create Todo</a>
             <a href="/" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Home</a>
         </div>
     </div>
@@ -29,7 +29,7 @@
                 @endif
                 
                 <div>
-                    <a href="/todos/{{$todo->id}}/edit" class="cursor-pointer text-indigo-500 text-white">
+                    <a href="{{ route('todo.edit', $todo->id) }}" class="cursor-pointer text-indigo-500 text-white">
                     <span class="fas fa-edit px-2"></span>
                     </a>
 
@@ -37,7 +37,7 @@
                     if(confirm('Are you sure?')) {
                         document.getElementById('form-delete-{{$todo->id}}').submit()
                     }"/>
-                    <form style="display:none" id="{{'form-delete-' . $todo->id}}" method="post" action="{{ route('todo.delete', $todo->id) }}">
+                    <form style="display:none" id="{{'form-delete-' . $todo->id}}" method="post" action="{{ route('todo.destroy', $todo->id) }}">
                     @csrf
                     @method('delete')
                     </form>

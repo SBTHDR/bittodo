@@ -89,7 +89,7 @@
 
                 <div class="links">
                     <a class="btn" href="{{ route('todo.index') }}">Go To Todos</a>
-                    <a class="btn" href="/todos/create">Create New Todo</a>
+                    <a class="btn" href="{{ route('todo.create') }}">Create New Todo</a>
                 </div>
             </div>
         </div>

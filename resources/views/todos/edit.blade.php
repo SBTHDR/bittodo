@@ -18,5 +18,5 @@
         <input type="submit" value="Update" class="p-2 border rounded bg-indigo-500 text-white">
     </form>
 
-    <a href="/todos" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Back To All Todos</a>
+    <a href="{{ route('todo.index') }}" class="mx-3 p-2 border rounded cursor-pointer bg-indigo-500 text-white">Back To All Todos</a>
 @endsection
