@@ -18,6 +18,10 @@
     <ul class="py-5">
         @foreach ($todos as $todo)
             <li class="flex justify-between p-2">
+                <div>
+                    @include('todos.complete-button')
+                </div>
+                
                 @if ($todo->completed)
                     <p class="line-through text-gray-600">{{$todo->title}}</p>
                 @else
@@ -28,19 +32,15 @@
                     <a href="/todos/{{$todo->id}}/edit" class="cursor-pointer text-indigo-500 text-white">
                     <span class="fas fa-edit px-2"></span>
                     </a>
-                    @if ($todo->completed)
-                        <span onclick="event.preventDefault();document.getElementById('form-incomplet-{{$todo->id}}').submit()" class="fas fa-check text-teal-500 cursor-pointer px-2"></span>
-                        <form style="display:none" id="{{'form-incomplet-' . $todo->id}}" method="post" action="{{ route('todo.incomplete', $todo->id) }}">
-                        @csrf
-                        @method('delete')
-                        </form>
-                    @else
-                        <span onclick="event.preventDefault();document.getElementById('form-complet-{{$todo->id}}').submit()" class="fas fa-check text-gray-300 cursor-pointer px-2"></span>
-                        <form style="display:none" id="{{'form-complet-' . $todo->id}}" method="post" action="{{ route('todo.complete', $todo->id) }}">
-                        @csrf
-                        @method('put')
-                        </form>
-                    @endif
+
+                    <span class="fas fa-trash text-red-500 px-2 cursor-pointer" onclick="event.preventDefault();
+                    if(confirm('Are you sure?')) {
+                        document.getElementById('form-delete-{{$todo->id}}').submit()
+                    }"/>
+                    <form style="display:none" id="{{'form-delete-' . $todo->id}}" method="post" action="{{ route('todo.delete', $todo->id) }}">
+                    @csrf
+                    @method('delete')
+                    </form>
                 </div>
             </li>
         @endforeach

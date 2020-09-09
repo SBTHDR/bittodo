@@ -48,4 +48,10 @@ class TodoController extends Controller
         return redirect()->back()->with('message', 'You make the todo incompleted again!');
 
     }
+
+    public function delete(Todo $todo)
+    {
+        $todo->delete();
+        return redirect()->back()->with('message', 'Todo Deleted Successfully!');
+    }
 }
