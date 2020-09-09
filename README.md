@@ -17,7 +17,8 @@ Bit-todo is a very simple CRUD Todo SPA Application based on Laravel 7.
 
 - Basic To Do list
 - Login, Register, as default auth
-- Creat, Read, Update, Delete Todos
+- Create, Read, Update, Delete Todos
+- Authorization
 
 ## Installation
 
