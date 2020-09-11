@@ -16,7 +16,7 @@
     <x-alert/>
 
     <ul class="py-5">
-        @foreach ($todos as $todo)
+        @forelse ($todos as $todo)
             <li class="flex justify-between p-2">
                 <div>
                     @include('todos.complete-button')
@@ -43,6 +43,9 @@
                     </form>
                 </div>
             </li>
-        @endforeach
+            @empty
+            <p class="text-2xl text-indigo-500">Your Todo list is Empty!</p>
+            <small class="text-indigo-500">Create one now</small>
+        @endforelse
     </ul>
 @endsection

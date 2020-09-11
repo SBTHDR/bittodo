@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -50,5 +51,10 @@ class User extends Authenticatable
         if($this->avatar) {
             Storage::delete('/public/images/' . $this->avatar);
         }
+    }
+
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
     }
 }
